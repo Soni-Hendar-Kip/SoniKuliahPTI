@@ -186,9 +186,9 @@ public class login extends javax.swing.JFrame {
             new UTS_Pemgrograman_Lanjut_4B().setVisible(true);
         }
         else if (NoxTextUser.getText().equals("") || NoxTextPassword.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "User atau Pasword tidak boleh kosong \n\n user = soni \n password = hendar", "Zonkkk !!", HEIGHT);
+            JOptionPane.showMessageDialog(null, "User atau Pasword tidak boleh kosong \n\n\n\n user = soni \n password = hendar", "Zonkkk !!", HEIGHT);
         } else {
-            JOptionPane.showMessageDialog(null, "Maaf User atau Pasword anda salah \n\n user = soni ; password = hendar", "Cilukbaaaaa !!", HEIGHT);
+            JOptionPane.showMessageDialog(null, "Maaf User atau Pasword anda salah \n\n\n\n user = soni ; password = hendar", "Cilukbaaaaa !!", HEIGHT);
             NoxTextUser.setText("");
             NoxTextPassword.setText("");
             NoxTextUser.requestFocus();

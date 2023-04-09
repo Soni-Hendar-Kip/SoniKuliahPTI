@@ -39,9 +39,10 @@ public class Readme extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Liberation Sans", 2, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Readme File\n\nUTS\nHasil copas dan sedikit modif dari Google\n\nVersion History :\n\nv2\n- Ada fiture menghitung jumlah nilai salah / benar\n- Ada fiture tombol berwarna saat di klik\n- Ada fiture notif jawaban benar / salah\n\nv3\n- [30 Maret 2023] Menambahkan menu Login di awal program\n- [31 Maret 2023] Disable tombol ABCD kalo sudah di klik salah satu jawaban");
+        jTextArea1.setText("Readme File\n\nUTS Pemrograman Lanjut JAVA\ndosen Pak Rozi\n\nVersion History :\n\nv2\n- Ada fiture menghitung jumlah nilai salah / benar\n- Ada fiture tombol berwarna saat di klik\n- Ada fiture notif jawaban benar / salah\n\nv3\n- Menambahkan menu Login di awal program\n- Menambahkan menu About di awal program\n- Menambahkan hyperlink ke source code github\n- Disable tombol pilihan ABCD kalo sudah di klik salah satu jawaban\n\n- Akan terus di update sesuai perkembangan yg diberikan oleh pak dosen Rozi\n- Dan source code langsung push ke github, siapa tahu bisa memberi manfaat ke orang lain yang membutuhkan");
         jScrollPane1.setViewportView(jTextArea1);
 
+        BtnOkeReadme_.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
         BtnOkeReadme_.setText("Oke");
         BtnOkeReadme_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,12 +56,12 @@ public class Readme extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(223, 223, 223)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnOkeReadme_)
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addGap(249, 249, 249))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,7 +70,7 @@ public class Readme extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtnOkeReadme_)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();

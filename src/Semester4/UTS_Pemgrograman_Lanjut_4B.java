@@ -164,6 +164,7 @@ public class UTS_Pemgrograman_Lanjut_4B extends javax.swing.JFrame {
         this.setLocation(x, y);
 
         muncul(0);
+        NoxButtonNext_.setEnabled(false);
         NoxButtonPrev_.setVisible(false); //agar tombol Prev hilang dari layar awal
         NoxButtonFinish_.setVisible(false); //agar tombol Finish hilang dari layar awal
         NoxButtonEXIT_.setVisible(false); //agar tombol EXIT hilang dari layar awal
@@ -437,7 +438,7 @@ public class UTS_Pemgrograman_Lanjut_4B extends javax.swing.JFrame {
                         .addComponent(TextPilihJawaban_1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(NoxAbout)
-                        .addContainerGap())))
+                        .addGap(16, 16, 16))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -449,7 +450,7 @@ public class UTS_Pemgrograman_Lanjut_4B extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextPertanyaanKe_)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -468,10 +469,13 @@ public class UTS_Pemgrograman_Lanjut_4B extends javax.swing.JFrame {
                     .addComponent(NoxButtonNext_)
                     .addComponent(NoxButtonFinish_)
                     .addComponent(NoxButtonEXIT_))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NoxAbout)
-                    .addComponent(TextPilihJawaban_1)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(TextPilihJawaban_1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoxAbout))))
         );
 
         setSize(new java.awt.Dimension(801, 509));
@@ -566,24 +570,28 @@ public class UTS_Pemgrograman_Lanjut_4B extends javax.swing.JFrame {
         // TODO add your handling code here:
         Cek_NoxJWB("a");
         telah_dipilih(NoxButtonA_);
+        NoxButtonNext_.setEnabled(true);
     }//GEN-LAST:event_NoxButtonA_ActionPerformed
 
     private void NoxButtonB_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoxButtonB_ActionPerformed
         // TODO add your handling code here:
         Cek_NoxJWB("b");
         telah_dipilih(NoxButtonB_);
+        NoxButtonNext_.setEnabled(true);
     }//GEN-LAST:event_NoxButtonB_ActionPerformed
 
     private void NoxButtonC_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoxButtonC_ActionPerformed
         // TODO add your handling code here:
         Cek_NoxJWB("c");
         telah_dipilih(NoxButtonC_);
+        NoxButtonNext_.setEnabled(true);
     }//GEN-LAST:event_NoxButtonC_ActionPerformed
 
     private void NoxButtonD_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoxButtonD_ActionPerformed
         // TODO add your handling code here:
         Cek_NoxJWB("d");
         telah_dipilih(NoxButtonD_);
+        NoxButtonNext_.setEnabled(true);
     }//GEN-LAST:event_NoxButtonD_ActionPerformed
 
     private void NoxButtonNext_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoxButtonNext_ActionPerformed
@@ -591,13 +599,15 @@ public class UTS_Pemgrograman_Lanjut_4B extends javax.swing.JFrame {
         index++;
         muncul(index);
         aktifkan_tombol(true);
+        NoxButtonNext_.setEnabled(false);
 
         if (index == 1) {
             NoxButtonPrev_.setVisible(true);
         }
-        if (index == 19) {
+        else if (index == 19) {
             NoxButtonNext_.setVisible(false);
             NoxButtonFinish_.setVisible(true);
+            //new cantik().setVisible(true);
         } else {
             NoxButtonNext_.setVisible(true);
             //NoxButtonFinish_.setVisible(false);
@@ -661,6 +671,7 @@ public class UTS_Pemgrograman_Lanjut_4B extends javax.swing.JFrame {
         TextPertanyaanKe_.setText("Score Nilai anda adalah:");
         TextPilihJawaban_.setText("Terima kasih atas partisipasinya....");
         NoxButtonEXIT_.setVisible(true);
+        new cantik().setVisible(true);
     }//GEN-LAST:event_NoxButtonFinish_ActionPerformed
 
     private void NoxButtonEXIT_MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoxButtonEXIT_MouseEntered

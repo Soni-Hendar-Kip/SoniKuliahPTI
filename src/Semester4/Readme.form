@@ -28,13 +28,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="567" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="223" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="BtnOkeReadme_" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="284" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="249" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,7 +45,7 @@
               <Component id="jScrollPane1" min="-2" pref="237" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="BtnOkeReadme_" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="16" max="32767" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,13 +66,16 @@
               <Font name="Liberation Sans" size="14" style="2"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Readme File&#xa;&#xa;UTS&#xa;Hasil copas dan sedikit modif dari Google&#xa;&#xa;Version History :&#xa;&#xa;v2&#xa;- Ada fiture menghitung jumlah nilai salah / benar&#xa;- Ada fiture tombol berwarna saat di klik&#xa;- Ada fiture notif jawaban benar / salah&#xa;&#xa;v3&#xa;- [30 Maret 2023] Menambahkan menu Login di awal program&#xa;- [31 Maret 2023] Disable tombol ABCD kalo sudah di klik salah satu jawaban"/>
+            <Property name="text" type="java.lang.String" value="Readme File&#xa;&#xa;UTS Pemrograman Lanjut JAVA&#xa;dosen Pak Rozi&#xa;&#xa;Version History :&#xa;&#xa;v2&#xa;- Ada fiture menghitung jumlah nilai salah / benar&#xa;- Ada fiture tombol berwarna saat di klik&#xa;- Ada fiture notif jawaban benar / salah&#xa;&#xa;v3&#xa;- Menambahkan menu Login di awal program&#xa;- Menambahkan menu About di awal program&#xa;- Menambahkan hyperlink ke source code github&#xa;- Disable tombol pilihan ABCD kalo sudah di klik salah satu jawaban&#xa;&#xa;- Akan terus di update sesuai perkembangan yg diberikan oleh pak dosen Rozi&#xa;- Dan source code langsung push ke github, siapa tahu bisa memberi manfaat ke orang lain yang membutuhkan"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JButton" name="BtnOkeReadme_">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="13" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Oke"/>
       </Properties>
       <Events>
