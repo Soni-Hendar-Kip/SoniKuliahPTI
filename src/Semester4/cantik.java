@@ -30,6 +30,7 @@ public class cantik extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlwaysOnTop(true);
         setLocation(new java.awt.Point(630, 140));
         setResizable(false);
 

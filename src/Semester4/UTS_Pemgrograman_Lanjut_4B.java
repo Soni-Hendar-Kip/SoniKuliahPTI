@@ -600,6 +600,8 @@ public class UTS_Pemgrograman_Lanjut_4B extends javax.swing.JFrame {
         muncul(index);
         aktifkan_tombol(true);
         NoxButtonNext_.setEnabled(false);
+        TextPilihJawaban_.setText("Pilih Jawaban:");
+        TextPilihJawaban_.setForeground(Color.BLACK);
 
         if (index == 1) {
             NoxButtonPrev_.setVisible(true);
@@ -618,12 +620,18 @@ public class UTS_Pemgrograman_Lanjut_4B extends javax.swing.JFrame {
         // TODO add your handling code here:
         index--;
         muncul(index);
+        aktifkan_tombol(false);
+        TextPilihJawaban_.setText("Maaf, anda sudah menjawab... tidak bisa di edit lagi!!");
+        TextPilihJawaban_.setForeground(Color.red);
 
         if (index == 0) {
             NoxButtonPrev_.setVisible(false);
+            NoxButtonNext_.setEnabled(true);
+            NoxButtonNext_.setVisible(true);
         } else {
             NoxButtonPrev_.setVisible(true);
             NoxButtonNext_.setVisible(true);
+            NoxButtonNext_.setEnabled(true);
             NoxButtonFinish_.setVisible(false);
         }
     }//GEN-LAST:event_NoxButtonPrev_ActionPerformed
