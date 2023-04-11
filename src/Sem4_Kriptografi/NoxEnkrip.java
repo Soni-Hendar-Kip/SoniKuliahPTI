@@ -1,27 +1,56 @@
-
 package Sem4_Kriptografi;
 
+import java.math.BigInteger;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.security.spec.KeySpec;
-import java.util.Base64;
-import javax.crypto.Cipher;
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.PBEKeySpec;
-import javax.crypto.spec.SecretKeySpec;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author montox
+ * @author Soni Hendarkanto on Apache NetBeans IDE 16 with Linux Mint 21.1
+ * "VERA" Cinnamon Desktop Edition
  */
 public class NoxEnkrip extends javax.swing.JFrame {
+
+    String NoxPassword, NoxMD5, NoxSHA1;
 
     /**
      * Creates new form NoxEnkrip
      */
     public NoxEnkrip() {
         initComponents();
+    }
+
+    private String encryptPasswordMD5() {
+        NoxPassword = TextAsli.getText();
+        String encPass = null;
+        try {
+            MessageDigest digest = MessageDigest.getInstance("MD5");
+            digest.update(NoxPassword.getBytes(), 0, NoxPassword.length());
+            encPass = new BigInteger(1, digest.digest()).toString(16);
+            NoxMD5 = encPass.toUpperCase();
+            TextMD5.setText(NoxMD5);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return encPass;
+    }
+
+    private String encryptPasswordSHA3_256() {
+        NoxPassword = TextAsli.getText();
+        String encPass = null;
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA3-256");
+            digest.update(NoxPassword.getBytes(), 0, NoxPassword.length());
+            encPass = new BigInteger(1, digest.digest()).toString(16);
+            NoxSHA1 = encPass.toUpperCase();
+            TextSHA1.setText(NoxSHA1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return encPass;
     }
 
     /**
@@ -33,49 +62,183 @@ public class NoxEnkrip extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        TextAsli = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TextMD5 = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TextSHA1 = new javax.swing.JTextArea();
+        ButProses_ = new javax.swing.JButton();
+        ButReadme_ = new javax.swing.JButton();
+        ButReset_ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jTextField1.setText("jTextField1");
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("UTS Matkul Keamanan Sistem & Jaringan Komputer");
 
-        jButton1.setText("jButton1");
+        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Engkripsi Kalimat Dengan MD5 Dan SHA3-256");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Soni hendarkanto - PTI 4B");
+
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Dosen: Pak Rozi");
+
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabel5.setText("Kalimat Asli");
+
+        TextAsli.setColumns(20);
+        TextAsli.setRows(5);
+        TextAsli.setToolTipText("Harus di isi !!");
+        jScrollPane1.setViewportView(TextAsli);
+
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabel6.setText("Hasil Enkrispi MD5");
+
+        TextMD5.setEditable(false);
+        TextMD5.setColumns(20);
+        TextMD5.setFont(new java.awt.Font("Liberation Sans", 3, 14)); // NOI18N
+        TextMD5.setForeground(new java.awt.Color(51, 0, 255));
+        TextMD5.setRows(5);
+        jScrollPane2.setViewportView(TextMD5);
+
+        jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabel7.setText("Hasil Enkrispi SHA3-256");
+
+        TextSHA1.setEditable(false);
+        TextSHA1.setColumns(20);
+        TextSHA1.setFont(new java.awt.Font("Liberation Sans", 3, 14)); // NOI18N
+        TextSHA1.setForeground(new java.awt.Color(0, 153, 51));
+        TextSHA1.setRows(5);
+        jScrollPane3.setViewportView(TextSHA1);
+
+        ButProses_.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        ButProses_.setText("Proses");
+        ButProses_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButProses_ActionPerformed(evt);
+            }
+        });
+
+        ButReadme_.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        ButReadme_.setText("Readme");
+        ButReadme_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButReadme_ActionPerformed(evt);
+            }
+        });
+
+        ButReset_.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        ButReset_.setText("Reset");
+        ButReset_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButReset_ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
+                .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(ButReadme_)
+                .addGap(35, 35, 35)
+                .addComponent(ButProses_)
+                .addGap(34, 34, 34)
+                .addComponent(ButReset_))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jButton1)
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(jLabel1)
+                .addGap(2, 2, 2)
+                .addComponent(jLabel3)
+                .addGap(4, 4, 4)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButProses_)
+                    .addComponent(ButReadme_)
+                    .addComponent(ButReset_))
+                .addGap(43, 43, 43))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButProses_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButProses_ActionPerformed
+        // TODO add your handling code here:
+        if (TextAsli.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Teks asli masih kosong..");
+            TextAsli.requestFocus();
+        } 
+        else {
+            encryptPasswordSHA3_256();
+            encryptPasswordMD5();
+            //txtSHA1MD5.setText(NoxSHA1 + NoxMD5);
+        }
+    }//GEN-LAST:event_ButProses_ActionPerformed
+
+    private void ButReadme_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButReadme_ActionPerformed
+        // TODO add your handling code here:
+        new Readme().setVisible(true);
+    }//GEN-LAST:event_ButReadme_ActionPerformed
+
+    private void ButReset_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButReset_ActionPerformed
+        // TODO add your handling code here:
+        TextAsli.setText("");
+        TextMD5.setText("");
+        TextSHA1.setText("");
+    }//GEN-LAST:event_ButReset_ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,9 +276,21 @@ public class NoxEnkrip extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton ButProses_;
+    private javax.swing.JButton ButReadme_;
+    private javax.swing.JButton ButReset_;
+    private javax.swing.JTextArea TextAsli;
+    private javax.swing.JTextArea TextMD5;
+    private javax.swing.JTextArea TextSHA1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }
