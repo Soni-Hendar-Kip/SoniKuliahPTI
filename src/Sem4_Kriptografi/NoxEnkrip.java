@@ -1,10 +1,10 @@
 package Sem4_Kriptografi;
 
 import java.math.BigInteger;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
+//import java.nio.charset.Charset;
+//import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+//import java.security.NoSuchAlgorithmException;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class NoxEnkrip extends javax.swing.JFrame {
 
-    String NoxPassword, NoxMD5, NoxSHA1;
+    String NoxPassword, NoxMD5, NoxSHA3_512;
 
     /**
      * Creates new form NoxEnkrip
@@ -38,15 +38,15 @@ public class NoxEnkrip extends javax.swing.JFrame {
         return encPass;
     }
 
-    private String encryptPasswordSHA3_256() {
+    private String encryptPasswordSHA3_512() {
         NoxPassword = TextAsli.getText();
         String encPass = null;
         try {
-            MessageDigest digest = MessageDigest.getInstance("SHA3-256");
+            MessageDigest digest = MessageDigest.getInstance("SHA3-512");
             digest.update(NoxPassword.getBytes(), 0, NoxPassword.length());
             encPass = new BigInteger(1, digest.digest()).toString(16);
-            NoxSHA1 = encPass.toUpperCase();
-            TextSHA1.setText(NoxSHA1);
+            NoxSHA3_512 = encPass.toUpperCase();
+            TextSHA3_512.setText(NoxSHA3_512);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,7 +74,7 @@ public class NoxEnkrip extends javax.swing.JFrame {
         TextMD5 = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        TextSHA1 = new javax.swing.JTextArea();
+        TextSHA3_512 = new javax.swing.JTextArea();
         ButProses_ = new javax.swing.JButton();
         ButReadme_ = new javax.swing.JButton();
         ButReset_ = new javax.swing.JButton();
@@ -117,14 +117,15 @@ public class NoxEnkrip extends javax.swing.JFrame {
         jScrollPane2.setViewportView(TextMD5);
 
         jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jLabel7.setText("Hasil Enkrispi SHA3-256");
+        jLabel7.setText("Hasil Enkrispi SHA3-512");
 
-        TextSHA1.setEditable(false);
-        TextSHA1.setColumns(20);
-        TextSHA1.setFont(new java.awt.Font("Liberation Sans", 3, 14)); // NOI18N
-        TextSHA1.setForeground(new java.awt.Color(0, 153, 51));
-        TextSHA1.setRows(5);
-        jScrollPane3.setViewportView(TextSHA1);
+        TextSHA3_512.setEditable(false);
+        TextSHA3_512.setColumns(20);
+        TextSHA3_512.setFont(new java.awt.Font("Liberation Sans", 3, 14)); // NOI18N
+        TextSHA3_512.setForeground(new java.awt.Color(0, 153, 51));
+        TextSHA3_512.setLineWrap(true);
+        TextSHA3_512.setRows(5);
+        jScrollPane3.setViewportView(TextSHA3_512);
 
         ButProses_.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         ButProses_.setText("Proses");
@@ -222,9 +223,9 @@ public class NoxEnkrip extends javax.swing.JFrame {
             TextAsli.requestFocus();
         } 
         else {
-            encryptPasswordSHA3_256();
+            encryptPasswordSHA3_512();
             encryptPasswordMD5();
-            //txtSHA1MD5.setText(NoxSHA1 + NoxMD5);
+            //txtSHA1MD5.setText(NoxSHA3_512 + NoxMD5);
         }
     }//GEN-LAST:event_ButProses_ActionPerformed
 
@@ -237,7 +238,7 @@ public class NoxEnkrip extends javax.swing.JFrame {
         // TODO add your handling code here:
         TextAsli.setText("");
         TextMD5.setText("");
-        TextSHA1.setText("");
+        TextSHA3_512.setText("");
     }//GEN-LAST:event_ButReset_ActionPerformed
 
     /**
@@ -281,7 +282,7 @@ public class NoxEnkrip extends javax.swing.JFrame {
     private javax.swing.JButton ButReset_;
     private javax.swing.JTextArea TextAsli;
     private javax.swing.JTextArea TextMD5;
-    private javax.swing.JTextArea TextSHA1;
+    private javax.swing.JTextArea TextSHA3_512;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

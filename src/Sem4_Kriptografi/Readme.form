@@ -175,7 +175,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Liberation Sans" size="13" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Apa itu SHA3-256 ?"/>
+        <Property name="text" type="java.lang.String" value="Apa itu SHA3-512 ?"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -227,7 +227,7 @@
           <Color blue="ff" green="33" red="33" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SSL Indonesia"/>
-        <Property name="toolTipText" type="java.lang.String" value="Klik untuk membuka wikipedia"/>
+        <Property name="toolTipText" type="java.lang.String" value="Klik untuk membuka Link"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TextSSLIndonesia_MouseClicked"/>

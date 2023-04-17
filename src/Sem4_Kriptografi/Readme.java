@@ -81,7 +81,7 @@ public class Readme extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 3, 13)); // NOI18N
-        jLabel4.setText("Apa itu SHA3-256 ?");
+        jLabel4.setText("Apa itu SHA3-512 ?");
 
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
@@ -111,7 +111,7 @@ public class Readme extends javax.swing.JFrame {
         TextSSLIndonesia_.setFont(new java.awt.Font("Liberation Sans", 2, 13)); // NOI18N
         TextSSLIndonesia_.setForeground(new java.awt.Color(51, 51, 255));
         TextSSLIndonesia_.setText("SSL Indonesia");
-        TextSSLIndonesia_.setToolTipText("Klik untuk membuka wikipedia");
+        TextSSLIndonesia_.setToolTipText("Klik untuk membuka Link");
         TextSSLIndonesia_.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TextSSLIndonesia_MouseClicked(evt);
