@@ -1,7 +1,8 @@
 # SoniKuliahPTI
 # README
+# Gunakan Belsoft JDK 19 atau JAVA Runtime Versi terbaru
 
-UTS Pemrograman Lanjut PTI 4B
+# UTS Pemrograman Lanjut PTI 4B
 Dosen: Pak ROzi
 
 Melanjutkan membuat program kuis
@@ -25,3 +26,5 @@ v3
 Nb:
 - Akan terus di update sesuai perkembangan yg diberikan oleh pak dosen Rozi
 - Dan source code langsung push ke github, siapa tahu bisa memberi manfaat ke orang lain yang membutuhkan
+
+- source: https://github.com/Soni-Hendar-Kip/SoniKuliahPTI
